@@ -1,0 +1,19 @@
+html, .sidebar, .pagination {
+  font-family: "Merriweather Sans", Helvetica;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather Sans", Helvetica;
+  font-weight: bold;
+}
+
+.hljs {
+  background: none;
+}
+
+.masthead-title small {
+  font-size: 67%;
+  color: #a0a0a0;
+}
