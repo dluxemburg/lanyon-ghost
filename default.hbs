@@ -13,10 +13,14 @@
     <meta name="description" content="{{meta_description}}" />
 
     <!-- CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{{asset "css/poole.css"}}">
     <link rel="stylesheet" href="{{asset "css/syntax.css"}}">
     <link rel="stylesheet" href="{{asset "css/lanyon.css"}}">
+    <link rel="stylesheet" href="{{asset "css/dluxemburg.css"}}">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Merriweather+Sans:700,300italic,700italic,300'>
 
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{asset "apple-touch-icon-precomposed.png"}}">
@@ -37,22 +41,20 @@
     <!-- Toggleable sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="sidebar-item">
-        <p>{{@blog.description}}</p>
+
+        <p>My name is Daniel and I like things that look or feel like networks (cities, brains, the internet, etc). I work as a developer at <a href="http://genius.com/" target="_blank">Genius</a>, make funny little projects, and sometimes talk to people about things.</p>
       </div>
 
       <nav class="sidebar-nav">
-        <a class="sidebar-nav-item" href="{{@blog.url}}">Home</a>
 
-        {{! The code below dynamically generates a sidebar nav of posts tagged as static pages. }}
-        {{#foreach navigation}}
-          <a class="sidebar-nav-item sidebar-nav-{{slug}}" href="{{url absolute="true"}}">{{label}}</a>
-        {{/foreach}}
+          <a class="sidebar-nav-item sigboar-nav-home" href="{{@blog.url}}"><i class="ion-social-rss"></i> &nbsp;Posts</a>
+          <a class="sidebar-nav-item sigboar-nav-twitter" href="https://twitter.com/dluxemburg" target="_blank"><i class="ion-social-twitter"></i> &nbsp;Twitter</a>
+          <a class="sidebar-nav-item sigboar-nav-github" href="https://github.com/dluxemburg" target="_blank"><i class="ion-social-github"></i> &nbsp;GitHub</a>
+
       </nav>
 
       <div class="sidebar-item">
-        <p>
-          &copy; {{date format="YYYY"}}. All rights reserved.
-        </p>
+
       </div>
     </div>
 
@@ -63,6 +65,7 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="{{@blog.url}}" title="Home">{{@blog.title}}</a>
+            <br/>
             <small>{{@blog.description}}</small>
           </h3>
         </div>
@@ -99,5 +102,13 @@
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block)
+        })
+      })
+    </script>
   </body>
 </html>
